@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Procrastinator Quiz</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+
+<style>
+
+#myform{
+	background: #63C771;
+}
+
+p{
+font-weight: bold;
+}
+
+.bold{
+	font-weight: bold;
+}
+#grade{
+	display: none;
+}
+input[type=radio] {
+  display: none;
+}
+
+input:checked + label img {
+  border:2px solid #000;
+}
+</style>
+
+
+
+</head>
+
+<body>
+
+  
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Are You a Procrastinator?</h1>
+            <span class="subheading">Find Out By Answering All the Questions Below</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+   
+       
+<form id="myform">
+
+
+
+<div class="form-group row">
+	<div class="col-sm-4">
+<p>When Completing a Task, Which of These Photos Looks Like You?</p>
+	</div>
+	 <div class="col-sm-8">
+<input type="radio" name="photo" value="0" id="Hardwork" />
+<label for="Hardwork"><img src="work.jpg"></label>
+<input type="radio" name="photo" value="1" id="Lazy" />
+<label for="Lazy"><img src="lazy.jpg"></label>
+</div>
+</div>
+<div class="form-group row">
+	<div class="col-sm-4">
+<p>Do you prefer the Destination or the Journey?</p>
+	</div>
+	 <div class="col-sm-8">
+<select id="trip">
+<option value="no answer">-Select-</option>
+ <option value="0">Journey</option>
+ <option value="1">Destination</option>
+</select>
+</div>
+</div>
+<div class="form-group row">
+	<div class="col-sm-4">
+<p>How Many Hours do you Spend on Social Media, Instead Of Working?</p>
+	</div>
+	 <div class="col-sm-8">
+<select id="social">
+<option value="no answer">-Select-</option>
+ <option value="0">1-3 hours</option>
+ <option value="1">4-6 hours</option>
+ <option value="2">7+ hours</option>
+</select>
+</div>
+</div>
+<div class="form-group row">
+	<div class="col-sm-4">
+<p>When is The EARLIEST you Will Complete a Project?</p>
+	</div>
+	 <div class="col-sm-8">
+<select id="early">
+<option value="no answer">-Select-</option>
+ <option value="0">A Month Before It's Due</option>
+ <option value="1">A Week Before It's Due</option>
+ <option value="2">A Day Before It's Due</option>
+</select>
+</div>
+</div>
+<div class="form-group row">
+	<div class="col-sm-4">
+<p>When is The LATEST you Will Complete a Project?</p>
+	</div>
+	 <div class="col-sm-8">
+<select id="late">
+<option value="no answer">-Select-</option>
+ <option value="0">A Day Before It's Due</option>
+ <option value="1">The Day It's Due</option>
+ <option value="2">An Hour Before It's Due</option>
+</select>
+</div>
+</div>
+
+<div class="form-group row">
+  <div class="offset-sm-4 col-sm-8">
+<input type="submit" value="Submit"></div>
+ </div>
+</form>
+<p>Results: <span id="grade">__</span></p>
+<p id="grade2"></p>
+  </div>
+
+  
+
+ 
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+
+<script>
+document.getElementById("myform").onsubmit=function() {
+   
+late = parseInt(document.getElementById("late").value);
+early = parseInt(document.getElementById("early").value);
+social = parseInt(document.getElementById("social").value);  
+trip = parseInt(document.getElementById("trip").value);  
+photo = parseInt(document.querySelector('input[name = "photo"]:checked').value);
+
+result = late + early + social + trip + photo;
+
+if (result == 0) {result2 = "You are NOT a procrastinator.  You are organized and hardworking.  You plan in advance when assigned a goal.  You waste no time in getting right to work and finshing projects well before they are due.<br /><img src='golden.gif' width='300' />"};
+if (result == 1) {result2 = "You are NOT a procrastinator.  You are organized and hardworking.  You plan in advance when assigned a goal.  You waste no time in getting right to work and finshing projects well before they are due.<br /><img src='golden.gif' width='300' />"};
+if (result == 2) {result2 = "You are NOT a procrastinator.  You are organized and hardworking.  You plan in advance when assigned a goal.  You waste no time in getting right to work and finshing projects well before they are due.<br /><img src='golden.gif' width='300' />"};
+if (result == 3) {result2 = "You are a Procrastinator sometimes.  You have trouble focusing on work, but you work hard before deadlines to make sure that you can accomplish all your tasks.  Sometimes you work at the last moment, sometimes you work well in advance.  Stay organized and keep your priorities in check.<br /><img src='eh.gif' width='300' />"};
+if (result == 4) {result2 = "You are a Procrastinator sometimes.  You have trouble focusing on work, but you work hard before deadlines to make sure that you can accomplish all your tasks.  Sometimes you work at the last moment, sometimes you work well in advance.  Stay organized and keep your priorities in check.<br /><img src='eh.gif' width='300' />"};
+if (result == 5) {result2 = "You are a Procrastinator sometimes.  You have trouble focusing on work, but you work hard before deadlines to make sure that you can accomplish all your tasks.  Sometimes you work at the last moment, sometimes you work well in advance.  Stay organized and keep your priorities in check.<br /><img src='eh.gif' width='300' />"};
+if (result == 6) {result2 = "You are a MEGA Procrastinator. You think you always have time to finsih projects, but often miss the due date.  Don't waste time taking quizzes go get something done!<br /><img src='fail.gif' width='300' />"};
+if (result == 7) {result2 = "You are a MEGA Procrastinator. You think you always have time to finsih projects, but often miss the due date.  Don't waste time taking quizzes go get something done!<br /><img src='fail.gif' width='300' />"};
+if (result == 8) {result2 = "You are a MEGA Procrastinator. You think you always have time to finsih projects, but often miss the due date.  Don't waste time taking quizzes go get something done!<br /><img src='fail.gif' width='300' />"};
+
+
+    
+     document.getElementById("grade").innerHTML = result;
+    document.getElementById("grade2").innerHTML = result2;
+
+
+
+
+return false;
+}
+</script>
+</body>
+
+</html>
